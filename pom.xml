@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+<!--        implementation group: 'com.h2database', name: 'h2', version: '1.4.191'-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -43,7 +44,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>2.1.212</version>
+            <version>1.4.191</version>
         </dependency>
     </dependencies>
 
