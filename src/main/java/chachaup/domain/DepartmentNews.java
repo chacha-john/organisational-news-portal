@@ -7,7 +7,7 @@ public class DepartmentNews extends News{
     private int id;
     private int departmentId;
 
-    public DepartmentNews(String content, String employee, Date dateCreated, boolean published, int departmentId) {
+    public DepartmentNews(String content, int employee, Date dateCreated, boolean published, int departmentId) {
         super(content, employee, dateCreated, published);
         this.departmentId = departmentId;
     }
