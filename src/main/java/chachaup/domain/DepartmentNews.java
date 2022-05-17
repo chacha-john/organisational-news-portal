@@ -1,14 +1,11 @@
 package chachaup.domain;
 
-import java.util.Date;
 
 public class DepartmentNews extends News{
-
-    private int id;
     private int departmentId;
 
-    public DepartmentNews(String content, int employee, Date dateCreated, boolean published, int departmentId) {
-        super(content, employee, dateCreated, published);
+    public DepartmentNews(String content, int employee, boolean published, int departmentId) {
+        super(content, employee, published);
         this.departmentId = departmentId;
     }
 
@@ -18,13 +15,5 @@ public class DepartmentNews extends News{
 
     public void setDepartmentId(int departmentId) {
         this.departmentId = departmentId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }
