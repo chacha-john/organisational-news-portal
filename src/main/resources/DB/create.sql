@@ -22,5 +22,6 @@ id int PRIMARY KEY auto_increment,
 content VARCHAR,
 employeeid int,
 datecreated Date,
-published varchar
+published varchar,
+departmentid VARCHAR
 );
