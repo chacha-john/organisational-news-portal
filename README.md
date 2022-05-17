@@ -7,7 +7,7 @@
 + [Description](#description)
 <!-- + [Screenshots](#screenshots) -->
 + [Technology Used](#technology-used)
-+ [Set up Instructions](#setup-instructions)
++ [Set up Instructions](#setup)
 + [Licence](#licence)
 + [Authors Info](#authors-Info)
 
@@ -25,7 +25,7 @@
 
 * Postgresql - Data store for application data
 
-[How to set up](#setup-instructions)
+[How to set up](#setup)
 #### In PSQL:
 * CREATE DATABASE rinews; 
 
