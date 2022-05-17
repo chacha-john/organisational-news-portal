@@ -1,18 +1,19 @@
 package chachaup.domain;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class News {
     private int id;
     private String content;
+
+    private Timestamp dateCreated;
     private int employeeId;
-    private Date dateCreated;
     private boolean published;
 
-    public News(String content, int employeeId, Date dateCreated, boolean published) {
+    public News(String content, int employeeId, boolean published) {
         this.content = content;
         this.employeeId = employeeId;
-        this.dateCreated = dateCreated;
         this.published = published;
     }
 
@@ -44,7 +45,7 @@ public class News {
         return dateCreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
+    public void setDateCreated(Timestamp dateCreated) {
         this.dateCreated = dateCreated;
     }
 
