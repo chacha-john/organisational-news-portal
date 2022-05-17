@@ -38,7 +38,7 @@ class Sql2oDepartmentNewsDaoTest {
     @Test
     void add_setsIdCorrectly_true() {
 //        DepartmentNews departmentNews = setUpDepartmentNews();
-        DepartmentNews departmentNews1 = new DepartmentNews("small improvements",2,new Date(),true,2);
+        DepartmentNews departmentNews1 = new DepartmentNews("small improvements",2,true,2);
         departmentNewsDao.add(departmentNews1);
         assertEquals(1, departmentNews1.getId());
 
@@ -47,7 +47,7 @@ class Sql2oDepartmentNewsDaoTest {
     @Test
     void getsAll_returnsAllDepartmentNews_true() {
         News news = setUpNews();
-        DepartmentNews departmentNews = new DepartmentNews("small improvements",2,new Date(),true,2);
+        DepartmentNews departmentNews = new DepartmentNews("small improvements",2,true,2);
         departmentNewsDao.add(departmentNews);
         assertEquals(1,departmentNewsDao.all().size());
     }
@@ -75,15 +75,22 @@ class Sql2oDepartmentNewsDaoTest {
         assertEquals(1,departmentNewsDao.all().size());
     }
 
+    @Test
+    void findByDepartment_returnAllNewsBelongingToADepartment() {
+        DepartmentNews news = setUpDepartmentNews();
+        DepartmentNews news1 = setUpDepartmentNews();
+        assertEquals(2,departmentNewsDao.findByDepartment(news.getDepartmentId()).size());
+    }
+
     //helper methods
     public DepartmentNews setUpDepartmentNews(){
-        DepartmentNews departmentNews = new DepartmentNews("small improvements",2,new Date(),true,2);
+        DepartmentNews departmentNews = new DepartmentNews("small improvements",2,true,2);
         departmentNewsDao.add(departmentNews);
         return departmentNews;
     }
 
     public News setUpNews(){
-        News news = new News("small improvements",2,new Date(),true);
+        News news = new News("small improvements",2,true);
         newsDao.add(news);
         return news;
     }
