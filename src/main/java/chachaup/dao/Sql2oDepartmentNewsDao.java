@@ -18,7 +18,7 @@ public class Sql2oDepartmentNewsDao extends Sql2oNewsDao implements DepartmentNe
 
     @Override
     public void add(DepartmentNews news) {
-        String sql = "INSERT INTO news (content, employeeId, dateCreated, published,departmentId) VALUES (:content,:employee,:dateCreated, :published,:departmentId)";
+        String sql = "INSERT INTO news (content, employeeId, published,departmentId) VALUES (:content,:employee, :published,:departmentId)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql,true)
                     .bind(news)
@@ -62,6 +62,20 @@ public class Sql2oDepartmentNewsDao extends Sql2oNewsDao implements DepartmentNe
                     .addParameter("employeeId",employeeId)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(DepartmentNews.class);
+        }
+    }
+
+    @Override
+    public List<DepartmentNews> findByDepartment(int departmentId) {
+        try (Connection con = sql2o.open()) {
+            String query = "SELECT * FROM news WHERE departmentid = :departmentId";
+            return con.createQuery(query)
+                    .addParameter("departmentId",departmentId)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(DepartmentNews.class);
+
+        } catch (Exception ex){
+            throw new RuntimeException("Error encountered", ex);
         }
     }
 
