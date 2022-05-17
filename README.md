@@ -4,8 +4,7 @@
 
 # Table of Content
 
-+ [Description](#description)
-<!-- + [Screenshots](#screenshots) -->
++ [Description](#description)<!-- + [Screenshots](#screenshots) -->
 + [Technology Used](#technology-used)
 + [Set up Instructions](#setup)
 + [Licence](#licence)
