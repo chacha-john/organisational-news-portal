@@ -5,7 +5,7 @@
 # Table of Content
 
 + [Description](#description)
-+ [Screenshots](#screenshots)
+<!-- + [Screenshots](#screenshots) -->
 + [Technology Used](#technology-used)
 + [Set up Instructions](#setup-instructions)
 + [Licence](#licence)
@@ -20,7 +20,7 @@
 ![Landing page screenshot](/src/main/resources/public/images/luku.png "Landing page")
 ![Add sighting page screenshot](/src/main/resources/public/images/luku2.png "Add sighting page")
  -->
-# Technology Used
+# [Technology Used](#technology-used)
 * Java Spark - backend logic and routing
 
 * Postgresql - Data store for application data
