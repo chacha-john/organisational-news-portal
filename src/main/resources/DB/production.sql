@@ -2,7 +2,7 @@
 
 \c rinews;
 
- CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name VARCHAR, phone VARCHAR, address VARCHAR, email VARCHAR, position VARCHAR, role VARCHAR, departmentId int);
+CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name VARCHAR, phone VARCHAR, address VARCHAR, email VARCHAR, position VARCHAR, role VARCHAR, departmentId int);
 
 CREATE TABLE IF NOT EXISTS departments(id SERIAL PRIMARY KEY, name VARCHAR, description VARCHAR);
 
