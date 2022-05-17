@@ -34,7 +34,7 @@ public class Sql2oDepartmentNewsDao extends Sql2oNewsDao implements DepartmentNe
 
     @Override
     public News findById(int id) {
-        String sql = "SELECT * FROM news WHERE departmentId !=0 AND id = :id";
+        String sql = "SELECT * FROM news WHERE departmentId IS NOT NULL AND id = :id";
         try(Connection con = sql2o.open()){
             News news = con.createQuery(sql)
                     .addParameter("id",id)
@@ -46,7 +46,7 @@ public class Sql2oDepartmentNewsDao extends Sql2oNewsDao implements DepartmentNe
 
     @Override
     public List<DepartmentNews> all() {
-        String sql = "SELECT * FROM news WHERE departmentId != 0";
+        String sql = "SELECT * FROM news WHERE departmentId IS NOT NULL";
         try(Connection con = sql2o.open()){
             return con.createQuery(sql)
                     .throwOnMappingFailure(false)
@@ -56,7 +56,7 @@ public class Sql2oDepartmentNewsDao extends Sql2oNewsDao implements DepartmentNe
 
     @Override
     public List<DepartmentNews> findByNewsAuthor(int employeeId) {
-        String sql = "SELECT * FROM news WHERE departmentId != 0 AND employeeId = :employeeId";
+        String sql = "SELECT * FROM news WHERE departmentId IS NOT NULL AND employeeId = :employeeId";
         try(Connection con = sql2o.open()){
             return con.createQuery(sql)
                     .addParameter("employeeId",employeeId)
@@ -81,7 +81,7 @@ public class Sql2oDepartmentNewsDao extends Sql2oNewsDao implements DepartmentNe
 
     @Override
     public void deleteById(int id) {
-        String sql = "DELETE FROM news WHERE departmentId != 0 AND id = :id";
+        String sql = "DELETE FROM news WHERE departmentId IS NOT NULL AND id = :id";
         try(Connection con = sql2o.open()){
             con.createQuery(sql)
                     .addParameter("id",id)
