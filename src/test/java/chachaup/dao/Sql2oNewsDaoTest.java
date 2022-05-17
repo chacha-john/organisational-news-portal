@@ -60,7 +60,7 @@ class Sql2oNewsDaoTest {
         News news = setUpNews();
         News news1 = setUpNews();
         News news2 = setUpNews();
-        News news3 = new News("small improvements",69,new Date(),true);
+        News news3 = new News("small improvements",69, true);
         newsDao.add(news3);
         assertEquals(3,newsDao.findByAuthor(2).size());
         assertEquals(1,newsDao.findByAuthor(69).size());
@@ -80,7 +80,7 @@ class Sql2oNewsDaoTest {
 
     //helper methods
     public News setUpNews(){
-        News news = new News("small improvements",2,new Date(),true);
+        News news = new News("small improvements",2, true);
         newsDao.add(news);
         return news;
     }
