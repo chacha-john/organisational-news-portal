@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS news(
 id int PRIMARY KEY auto_increment,
 content VARCHAR,
 employeeid int,
-datecreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+datecreated Date,
 published varchar,
 departmentid VARCHAR
 );
