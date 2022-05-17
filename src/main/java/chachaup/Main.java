@@ -14,8 +14,6 @@ import org.sql2o.Sql2o;
 import spark.Spark;
 
 import static spark.Spark.*;
-import static spark.route.HttpMethod.after;
-import static spark.route.HttpMethod.get;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,8 +24,8 @@ public class Main {
         Connection con;
         Gson gson = new Gson();
 
-        String connectionString = "jdbc:h2:~/jadle.db;INIT=RUNSCRIPT from 'classpath:DB/create.sql'";
-        Sql2o sql2o = new Sql2o(connectionString,"","");
+        String connectionString = "jdbc:postgresql://localhost:5432/rinews";
+        Sql2o sql2o = new Sql2o(connectionString,"riko","nzfu5321");
         newsDao = new Sql2oNewsDao(sql2o);
         departmentDao = new Sql2oDepartmentDao(sql2o);
         departmentNewsDao = new Sql2oDepartmentNewsDao(sql2o);
