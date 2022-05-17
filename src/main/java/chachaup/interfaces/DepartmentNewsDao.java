@@ -14,6 +14,8 @@ public interface DepartmentNewsDao {
     List<DepartmentNews> all();
     List<DepartmentNews> findByNewsAuthor(int employeeId);
 
+    List<DepartmentNews> findByDepartment(int departmentId);
+
 
     //update
 
